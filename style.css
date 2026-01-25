@@ -27,7 +27,7 @@ a{
 .cover-image{
     width: 100%;
     height: 100vh;
-    background-image: url('./assets /solar punk.jpg');
+    background-image: url('./assets /img0.jpg ');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -35,8 +35,8 @@ a{
     /* bacground attachment property in CSS sets whether a background image's position is fixed within the viewport, or scroll within it's containing block */
 }
 
-.is--nav{
-    position: sticky;
+#site-header .is--nav{
+    position: sticky; 
     top: 0;
     z-index: 1000;
     background-color: var(--primary-bg-color);
