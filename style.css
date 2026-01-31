@@ -35,7 +35,7 @@ a{
     /* bacground attachment property in CSS sets whether a background image's position is fixed within the viewport, or scroll within it's containing block */
 }
 
-#site-header .is--nav{
+.is--nav{
     position: sticky; 
     top: 0;
     z-index: 1000;
@@ -79,6 +79,7 @@ a{
 #site-header .site-nav ul li a:hover{
     color: #8c8c8c;
 }
+
 
 #site-main .discover{
     display: flex;
