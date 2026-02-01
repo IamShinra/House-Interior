@@ -93,7 +93,6 @@ a{
     margin-top: 8.79rem;
     text-align: center;
 
-
     & .slide > h1{
         display: block;
         font-size: 13.8vw;
@@ -109,4 +108,12 @@ a{
         }
 }
 
+}
+
+#discover .container .slide{
+    width: 60vw;
+    max-width: 60vw;
+    margin: 2px;
+    background-color: red;
+    overflow: hidden;
 }
