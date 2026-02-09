@@ -21,7 +21,7 @@
 const discover_tl = gsap.timeline({
     scrollTrigger:{
         trigger: ".slide",
-        start: "25%",
+        start: "-25%",
         end: "150%",
         markers: true,
         scrub: 2,
@@ -52,8 +52,8 @@ gsap.to("#img_section2",{
     clipPath: "circle(100% at 50% 50%)",
     scrollTrigger: {
         trigger: "image-section > .container",
-        start: "top top",
-        end: "bottom bottom",
+        start: "35%",
+        end: "80%",
         scrub: 2,
         pin: true,
         onEnter: () => {
@@ -63,4 +63,33 @@ gsap.to("#img_section2",{
             document.body.classList.remove("dark-theme")
         }
     }
+})
+
+
+//Furniture section Animation
+//select all .grid-items
+
+const gridWrapper = gsap.toArray(".grid-items");
+
+gridWrapper.forEach(wrapper => {
+    //select all box elements within the current wrapper
+
+    const boxes = wrapper.querySelectorAll('.box');
+
+    //create GSAP animation with box element
+
+    boxes.forEach(box => {
+        //create gsap animation
+        gsap.from(box, {
+            y: 500,
+            duration: 0.5,
+            scrollTrigger: {
+                markers: true,
+                trigger: box,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 4
+            }
+        })
+    })
 })
