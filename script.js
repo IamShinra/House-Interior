@@ -1,5 +1,7 @@
 gsap.registerPlugin(ScrollTrigger);
 
+
+
 gsap.fromTo("#title", {
     scale: 9.2,
     y: -200
@@ -105,6 +107,35 @@ const sections = gsap.utils.toArray(".grid-wrapper");
 if (!heading || !sections.length) {
     console.error("Heading or sections not found");
 }
+
+// Footer Animation
+const footer_tl = gsap.timeline({
+    scrollTrigger: {
+        trigger: ".site-footer",
+        start: "top 80%",
+        end: "bottom bottom",
+        toggleActions: "play none none reverse"
+    }
+});
+
+footer_tl.from(".footer-top > *", {
+    y: 100,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2,
+    ease: "power3.out"
+})
+    .from(".footer-middle > *", {
+        y: 50,
+        opacity: 0,
+        duration: 0.8,
+        stagger: 0.1,
+        ease: "power2.out"
+    }, "-=0.5")
+    .from(".footer-bottom", {
+        opacity: 0,
+        duration: 1
+    }, "-=0.5");
 
 // ✅ Pin the heading properly
 ScrollTrigger.create({
