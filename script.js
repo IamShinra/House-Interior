@@ -1,25 +1,25 @@
- gsap.registerPlugin(ScrollTrigger);
- 
- gsap.fromTo("#title",{
-        scale: 9.2,
-        y : -200
-    },{
-        scale:1,
-        y:0,
-        duration:1,
-        scrollTrigger : {
-            trigger: "#title",
-            end: "bottom top",
-            invalidateOnRefresh: true,
-            scrub: 2,
-            ease: "expoScale(0.5,7,none)",
-        }
-    })
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.fromTo("#title", {
+    scale: 9.2,
+    y: -200
+}, {
+    scale: 1,
+    y: 0,
+    duration: 1,
+    scrollTrigger: {
+        trigger: "#title",
+        end: "bottom top",
+        invalidateOnRefresh: true,
+        scrub: 2,
+        ease: "expoScale(0.5,7,none)",
+    }
+})
 
 // Discover section animation
 
 const discover_tl = gsap.timeline({
-    scrollTrigger:{
+    scrollTrigger: {
         trigger: ".slide",
         start: "-25%",
         end: "150%",
@@ -29,29 +29,29 @@ const discover_tl = gsap.timeline({
     }
 })
 
-discover_tl.to(".slide1",{
-    y:220,
+discover_tl.to(".slide1", {
+    y: 220,
 })
 
-discover_tl.to(".slide2",{
-    y:220,
+discover_tl.to(".slide2", {
+    y: 220,
 })
 
-discover_tl.to(".slide3",{
-    y:220,
+discover_tl.to(".slide3", {
+    y: 220,
 })
 
-discover_tl.to(".slide4",{
-    y:220,
+discover_tl.to(".slide4", {
+    y: 220,
 })
 
 
 //image section animation
 
-gsap.to("#img_section2",{
+gsap.to("#img_section2", {
     clipPath: "circle(100% at 50% 50%)",
     scrollTrigger: {
-        trigger: "image-section > .container",
+        trigger: ".image-section > .container",
         start: "35%",
         end: "80%",
         scrub: 2,
@@ -59,7 +59,7 @@ gsap.to("#img_section2",{
         onEnter: () => {
             document.body.classList.add("dark-theme");
         },
-        onLeaveBack : () => {
+        onLeaveBack: () => {
             document.body.classList.remove("dark-theme")
         }
     }
@@ -86,8 +86,8 @@ gridWrapper.forEach(wrapper => {
             scrollTrigger: {
                 markers: true,
                 trigger: box,
-                start: "top bottom",
-                end: "bottom top",
+                start: "top top",
+                end: "bottom bottom",
                 scrub: 4
             }
         })

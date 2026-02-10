@@ -1,25 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root{
+:root {
     --primary-font-family: "Inter Tight", sans-serif;
     --primary-bg-color: #2e2a27;
     --primary-text-color: #e8e2da;
 }
 
-
-/* add dark-theme*/
-.dark-theme{
-     --primary-bg-color: #e8e2da;
+/* dark theme */
+.dark-theme {
+    --primary-bg-color: #e8e2da;
     --primary-text-color: #2e2a27;
 }
 
-body{
+body {
     height: 100%;
     width: 100%;
     font-family: var(--primary-font-family);
@@ -28,55 +27,53 @@ body{
     transition: all 3s;
 }
 
-a{
+a {
     text-decoration: none;
     color: inherit;
 }
 
-.cover-image{
+.cover-image {
     width: 100%;
     height: 100vh;
-    background-image: url('./assets /img0.jpg ');
+    background-image: url('./assets/img0.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed; 
-    /* bacground attachment property in CSS sets whether a background image's position is fixed within the viewport, or scroll within it's containing block */
+    background-attachment: fixed;
 }
 
-.is--nav{
-    position: sticky; 
+.is--nav {
+    position: sticky;
     top: 0;
     z-index: 1000;
     background-color: var(--primary-bg-color);
     transition: all 3s;
- }
+}
 
-#site-header{
+#site-header {
     width: 100%;
     z-index: 10;
     text-align: center;
-    color: white;
     background-color: var(--primary-bg-color);
 }
 
-#site-header .site-nav{
+#site-header .site-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 0rem;
-    border-bottom: var(--primary-text-color) 1px solid;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--primary-text-color);
     color: var(--primary-text-color);
-    margin: 0 2rem;    
+    margin: 0 2rem;
 }
 
-#site-header .site-nav ul{
+#site-header .site-nav ul {
     display: flex;
     gap: 1rem;
-    list-style: none; 
+    list-style: none;
 }
 
-#site-header .site-nav ul li a{ 
+#site-header .site-nav ul li a {
     color: var(--primary-text-color);
     text-transform: uppercase;
     font-size: 1.6vw;
@@ -84,55 +81,52 @@ a{
     font-weight: 500;
 }
 
-
-#site-header .site-nav ul li a:hover{
+#site-header .site-nav ul li a:hover {
     color: #8c8c8c;
 }
 
-
-#site-main .discover{
+/* Discover Section */
+#site-main .discover {
     display: flex;
     justify-content: center;
 }
 
-#site-main .discover .container{
+#site-main .discover .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 8.79rem;
     text-align: center;
-
-    & .slide > h1{
-        display: block;
-        font-size: 13.8vw;
-        font-weight: 700;
-        color: var(--primary-text-color);
-        letter-spacing: -10px;
-        line-height: 0.8;
-    
-        &.lightWidth{
-            font-weight: 300;
-            font-style: italic;
-    
-        }
 }
 
+#site-main .discover .container .slide > h1 {
+    display: block;
+    font-size: 13.8vw;
+    font-weight: 700;
+    color: var(--primary-text-color);
+    letter-spacing: -10px;
+    line-height: 0.8;
 }
 
-#discover .container .slide{
+#site-main .discover .container .slide > h1.lightWidth {
+    font-weight: 300;
+    font-style: italic;
+}
+
+#discover .container .slide {
     width: 80vw;
     max-width: 80vw;
     margin: 2px;
-    /* background-color: red; */
     overflow: hidden;
 }
 
-#image-section .container{
+/* Image Section */
+#image-section .container {
     position: relative;
     height: 130vh;
 }
 
-#image-section .container img{
+#image-section .container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -142,95 +136,88 @@ a{
     clip-path: circle(20% at 50% 50%);
 }
 
-#site-main #tag-section{
+/* Tag Section */
+#site-main #tag-section {
     display: flex;
-    justify-content: 5rem;
     margin-top: 5rem;
-    
-    & .container{
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-        align-items: center;
-        width: 100rem;
-
-        & > span{
-            font-size: clamp(1.5rem, 3vw, 4rem);
-            font-weight: 700;
-            letter-spacing: -1px;
-            color: var(--primary-text-color);
-            margin-bottom: 1rem;
-            border: 1px solid var(--primary-text-color);
-            padding: 1rem 4rem;
-            border-radius: 100vw;
-        }
-    }
 }
 
-#site-main #furniture-section{
+#site-main #tag-section .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    width: 100rem;
+}
+
+#site-main #tag-section .container > span {
+    font-size: clamp(1.5rem, 3vw, 4rem);
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: var(--primary-text-color);
+    margin-bottom: 1rem;
+    border: 1px solid var(--primary-text-color);
+    padding: 1rem 4rem;
+    border-radius: 100vw;
+}
+
+/* Furniture Section */
+#site-main #furniture-section {
     height: 100vh;
     position: relative;
     margin: 0 2rem;
+}
 
-    & .container{
+#site-main #furniture-section .container .furniture-title {
+    font-size: 14vw;
+    font-weight: 700;
+    letter-spacing: -5px;
+    color: var(--primary-text-color);
+    margin-bottom: 1rem;
+}
 
-        & .furniture-title{
-            bottom: 0;
-            font-size: 14vw;
-            font-weight: 700;
-            letter-spacing: -5px;
-            color: var(--primary-text-color);
-            margin-bottom: 1rem;
+#site-main #furniture-section .container .grid-wrapper {
+    width: 100%;
+    height: 100vh;
+}
 
-        }
+#site-main #furniture-section .container .grid-wrapper .grid-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+    gap: 8vw;
+}
 
-        & .grid-wrapper{
-            width: 100%;
-            height: 100vh;
+#site-main #furniture-section .container .grid-wrapper .grid-items .box > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-            & .grid-items{
-                display: flex;
-                justify-content: space-around;
-                align-items: end;
-                gap: 8vw;
+#site-main #furniture-section .container .grid-wrapper .grid-items > * {
+    flex: 1;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
 
-                & .box > img{
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                }
+#site-main #furniture-section .container .grid-wrapper .grid-items :nth-child(1) {
+    aspect-ratio: 1 / 1.8;
+    flex-basis: 120px;
+}
 
-                & > *{
-                   flex: 1; 
-                   max-width: 100%;
-                   height: auto;
-                   object-fit: contain;
+#site-main #furniture-section .container .grid-wrapper .grid-items :nth-child(2) {
+    aspect-ratio: 1 / 1.2;
+    flex-basis: 100px;
+}
 
-                }
+#site-main #furniture-section .container .grid-wrapper .grid-items :nth-child(3) {
+    aspect-ratio: 1 / 1;
+    transform: translateY(-120%);
+}
 
-                & :nth-child(1){
-                    aspect-ratio: 1/1.8;
-                    flex-basis: 120px;
-                    transform: translateY(40%);
-                }
-                & :nth-child(2){
-                    aspect-ratio: 1/1.2;
-                    flex-basis: 100px;
-                    transform: translateY(40%);
-                }
-                & :nth-child(3){
-                    aspect-ratio: 1/1;
-                    transform: translateY(-120%);
-                }
-                & :nth-child(4){
-                    aspect-ratio: 1/1.4;
-                    flex-basis: 200px;
-                    transform: translateY(60%);
-                }
-
-            }
-        }
-    }
-
+#site-main #furniture-section .container .grid-wrapper .grid-items :nth-child(4) {
+    aspect-ratio: 1 / 1.4;
+    flex-basis: 200px;
 }
