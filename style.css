@@ -170,6 +170,7 @@ a {
 }
 
 #site-main #furniture-section .container .furniture-title {
+    bottom: 0;
     font-size: 14vw;
     font-weight: 700;
     letter-spacing: -5px;
@@ -184,7 +185,7 @@ a {
 
 #site-main #furniture-section .container .grid-wrapper .grid-items {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: end;
     gap: 8vw;
 }
@@ -205,11 +206,14 @@ a {
 #site-main #furniture-section .container .grid-wrapper .grid-items :nth-child(1) {
     aspect-ratio: 1 / 1.8;
     flex-basis: 120px;
+    transform: translateY(40%);
 }
 
 #site-main #furniture-section .container .grid-wrapper .grid-items :nth-child(2) {
     aspect-ratio: 1 / 1.2;
     flex-basis: 100px;
+        transform: translateY(40%);
+
 }
 
 #site-main #furniture-section .container .grid-wrapper .grid-items :nth-child(3) {
@@ -220,4 +224,6 @@ a {
 #site-main #furniture-section .container .grid-wrapper .grid-items :nth-child(4) {
     aspect-ratio: 1 / 1.4;
     flex-basis: 200px;
+        transform: translateY(40%);
+
 }

@@ -23,7 +23,7 @@ const discover_tl = gsap.timeline({
         trigger: ".slide",
         start: "-25%",
         end: "150%",
-        markers: true,
+        // markers: true,
         scrub: 2,
         ease: "ease"
     }
@@ -52,9 +52,9 @@ gsap.to("#img_section2", {
     clipPath: "circle(100% at 50% 50%)",
     scrollTrigger: {
         trigger: ".image-section > .container",
-        start: "35%",
+        start: "15%",
         end: "80%",
-        scrub: 2,
+        scrub: 4,
         pin: true,
         onEnter: () => {
             document.body.classList.add("dark-theme");
@@ -69,7 +69,7 @@ gsap.to("#img_section2", {
 //Furniture section Animation
 //select all .grid-items
 
-const gridWrapper = gsap.toArray(".grid-items");
+const gridWrapper = gsap.utils.toArray(".grid-items");
 
 gridWrapper.forEach(wrapper => {
     //select all box elements within the current wrapper
@@ -84,12 +84,68 @@ gridWrapper.forEach(wrapper => {
             y: 500,
             duration: 0.5,
             scrollTrigger: {
-                markers: true,
+                trigger: boxes,
+                // markers: true,
                 trigger: box,
-                start: "top top",
-                end: "bottom bottom",
+                start: "top bottom",
+                end: "bottom top",
                 scrub: 4
             }
         })
     })
 })
+
+
+//Change text of furniture section
+
+
+const heading = document.querySelector(".furniture-title h2");
+const sections = gsap.utils.toArray(".grid-wrapper");
+
+if (!heading || !sections.length) {
+    console.error("Heading or sections not found");
+}
+
+// ✅ Pin the heading properly
+ScrollTrigger.create({
+    trigger: "#furniture-section .container",
+    start: "top center",
+    end: "bottom top",
+    pin: ".furniture-title",
+    pinSpacing: false,
+    // markers: true
+});
+
+// ✅ Change text on scroll
+sections.forEach((section, i) => {
+    ScrollTrigger.create({
+        trigger: section,
+        start: "top center",
+        end: "bottom center",
+
+        onEnter: () => {
+            updateHeading(i);
+
+            if (i === 0) {
+                document.body.classList.remove("dark-theme");
+            }
+        },
+
+        onEnterBack: () => {
+            updateHeading(i);
+
+            if (i === 0) {
+                document.body.classList.remove("dark-theme");
+            }
+        }
+    });
+});
+
+// ✅ Update heading text
+function updateHeading(index) {
+    const headingTexts = ["Furniture", "Decor", "Office", "Tech"];
+    heading.textContent = headingTexts[index] ?? headingTexts[0];
+}
+
+// Initial text
+updateHeading(0);
